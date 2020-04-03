@@ -1,0 +1,173 @@
+<!--<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>home page</title>
+<link rel ="stylesheet" type ="text/css" href= "style.css">
+
+<style>
+*{
+margin:0px;
+}
+ #nav{
+background-color:blue;
+color:white;
+height:90px;
+position:fixed;
+top:0px;
+width:100%;
+margin-top:0px;
+}
+
+#nav nav{
+margin-top:15px;
+
+
+}
+#nav ul{
+text-decoration:none;
+list-style:none;
+color:white;
+float:right;
+margin-top:30px;
+margin-right:50px;
+}
+#nav ul li{
+display:inline-block;
+text-decoration:none;
+list-style:none;
+margin-left:200px;
+
+
+}
+#nav ul li a{
+color:white;
+text-decoration:none;
+}
+#nav ul li a:hover{
+color:yellow;
+background-color:black;
+border-radius:50%;
+border:100px;
+}
+
+
+ 
+.header2{
+background-color:coral;
+height:auto;
+color:purple;
+
+}
+</style>
+</head>
+<body>
+<div id= nav>
+<nav>
+<ul>
+<li><a href="About.html" target="_blank">About</a></li>
+<li><a href="#"target="_blank">Education</a></li>
+<li><a href ="#"target="_blank">Religion</a></li>
+<li><a href ="#"target="_blank">Social</a></li>
+</ul>
+</div>
+</nav>
+<section class="header2">
+<p>about me </p>
+<ul>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<li>school life </li>
+<li> religious life</li>
+<li> academic</li>
+<table>
+  
+    <tr>
+    <th style="color:white" font-size="20px">name</th>
+    <th>age</th>
+   </tr>
+    
+  
+  <tr>
+    <td>Jill Smith</td>
+    <td>50</td>
+  </tr>
+</table> 
+</section>
+</body>
+</html>
+-->
+<h1> this is the felo page.</h1>
+<ul>
+  {% for Felo_item in all_items %}
+    <li>{{ all_felo_item.content }}
+	      
+	<form action="/deleteFelo/{{felo_item.id}}/" style="display: inline;" 
+               method="post">{% csrf_token %}
+	 <input type="submit" value="Delete"/>
+	</form>
+    </li>
+ {% endfor %}
+</ul>
+
+<form action="/addFelo/" method="post">{% csrf_token %}
+ <input tpe="text" name="content"/>
+ <input type="submit" value="Add"/>
+</form>
